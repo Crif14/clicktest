@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/style.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <script></script>
+    <div class="center">
+        <h1>TESTA I TUOI RIFLESSI</h1>
+        <div id="primapag" class="center">
+            <ul id="regole" >
+                <li>
+                    Questo è un test per verificare quanto i tuoi riflessi sono veloci.
+                </li>
+                <li>
+                    Una volta premuto il pulsante partira il semaforo.
+                </li>
+                <li>
+                    Quando diventera verde il semaforo dovrai premere sul pulsante. 
+                </li>
+                <li>Una volta premuto ti verrà detto il tuo tempo.</li>
+                <li>
+                    Se lo premerai prima perderai direttamente
+                </li>
+            </ul>
+            <input type="button" value="Per Iniziare" class="bottone" id="inizio">
+        </div>   
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        let inizio = document.querySelector("#inizio")
+        let div_primo = document.querySelector("#primapag")
+        inizio.addEventListener("click", function (event) {
+            div_primo.style.display = "none";
+            function setup(){
+                let cnv = createCanvas(1000,500)
+                angleMode(DEGREES)
+                cnv.position(450, 300)
+            }
+            function draw(){
+
+            }
+        })
+    </script>
+</body>
+</html>
 </body>
 </html>

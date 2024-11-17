@@ -1,0 +1,12 @@
+.bottone{
+    width: 350px;
+    height: 60px;
+    background: #4BE512;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+    border-style: hidden;
+}
