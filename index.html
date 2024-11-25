@@ -58,7 +58,7 @@
             verde= 255
             startTime = Date.now()
             check=true
-            stop()
+            tempoText.innerHTML="ORAAA!!!"
         }
         let inizio = document.querySelector("#inizio");
         let start = document.querySelector("#start");
@@ -71,6 +71,12 @@
         let rosso4= 0
         let rosso5= 0
         let verde=0
+        let timeOutid1=undefined
+        let timeOutid2=undefined
+        let timeOutid3=undefined
+        let timeOutid4=undefined
+        let timeOutid5=undefined
+        let timeOutid6=undefined
         function reset(){
             rosso1 = 0
             rosso2= 0
@@ -80,13 +86,18 @@
             verde=0
             check= false
             startTime = null;
-            // Ripristina visivamente tutti i colori
             tempoText.textContent = "Qui apparirà il tuo tempo";
+            clearTimeout(this.timeOutid1)
+            clearTimeout(this.timeOutid2)
+            clearTimeout(this.timeOutid3)
+            clearTimeout(this.timeOutid4)
+            clearTimeout(this.timeOutid5)
+            clearTimeout(this.timeOutid6)
         }
         function setup(){
                 let cnv = createCanvas(1000,500);
                 angleMode(DEGREES);
-                cnv.position(590, 500);
+                cnv.position(390, 400);
             }
             function draw(){
                 fill(0,0,0)
@@ -123,29 +134,25 @@
             reset()
             inizio.style.display = "none";
             start.style.display = "block";
-            inizio.style.display = "none";
-            start.style.display = "block";
-            tempoText.textContent = "Preparati...";
+            tempoText.innerHTML = "Preparati...";
             let random = generateRandomInteger(1,3)
-            setTimeout(() => delayed(1), 1000);
-            setTimeout(() => delayed(2), 2000);
-            setTimeout(() => delayed(3), 3000);
-            setTimeout(() => delayed(4), 4000);
-            setTimeout(() => delayed(5), 5000);
-            setTimeout(delayed2, 5000+random*1000);
-            
+            timeOutid1 = setTimeout(() => delayed(1), 1000);
+            timeOutid2 = setTimeout(() => delayed(2), 2000);
+            timeOutid3 = setTimeout(() => delayed(3), 3000);
+            timeOutid4 = setTimeout(() => delayed(4), 4000);
+            timeOutid5 = setTimeout(() => delayed(5), 5000);
+            timeOutid6 = setTimeout(delayed2, 5000+random*1000);
         })
         start.addEventListener("click", function(event){
             if (!check) {
-            tempoText.textContent = "Troppo presto! Hai perso.";
+            tempoText.innerHTML = "Troppo presto! Hai perso.";
             } else {
                 let reactionTime = (Date.now() - startTime) / 1000;
-                tempoText.textContent = `Il tuo tempo di reazione: ${reactionTime.toFixed(3)} secondi`;
+                tempoText.innerHTML = "Il tuo tempo di reazione:" +reactionTime+" secondi";
             }
             start.value = "Riprova";
             inizio.style.display = "block";
             start.style.display = "none";
-            reset();
         })
             
     </script>
