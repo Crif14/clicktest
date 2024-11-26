@@ -81,18 +81,18 @@
             rosso1 = 0
             rosso2= 0
             rosso3= 0
-            rosso4= 0
-            rosso5= 0
-            verde=0
+            rosso4  = 0
+            rosso5 = 0
+            verde  = 0
             check= false
             startTime = null;
             tempoText.textContent = "Qui apparirà il tuo tempo";
-            clearTimeout(this.timeOutid1)
-            clearTimeout(this.timeOutid2)
-            clearTimeout(this.timeOutid3)
-            clearTimeout(this.timeOutid4)
-            clearTimeout(this.timeOutid5)
-            clearTimeout(this.timeOutid6)
+            clearTimeout(timeOutid1);
+            clearTimeout(timeOutid2);
+            clearTimeout(timeOutid3);
+            clearTimeout(timeOutid4);
+            clearTimeout(timeOutid5);
+            clearTimeout(timeOutid6);
         }
         function setup(){
                 let cnv = createCanvas(1000,500);
@@ -145,7 +145,8 @@
         })
         start.addEventListener("click", function(event){
             if (!check) {
-            tempoText.innerHTML = "Troppo presto! Hai perso.";
+                tempoText.innerHTML = "Troppo presto! Hai perso.";
+                reset()
             } else {
                 let reactionTime = (Date.now() - startTime) / 1000;
                 tempoText.innerHTML = "Il tuo tempo di reazione:" +reactionTime+" secondi";
