@@ -27,7 +27,7 @@
                     </li>
                 </ul>
                 <input type="button" value="Per Iniziare" class="bottone" id="inizio">
-                <input type="button" value="REFLEX" class="bottone nascosto" id="start">
+                <input type="button" value="Clicca qui" class="bottone nascosto" id="start">
                 <h3 id="tempo">Qui apparirà il tuo tempo</h3>
             </div>
         </div>
@@ -95,9 +95,11 @@
             clearTimeout(timeOutid6);
         }
         function setup(){
-                let cnv = createCanvas(1000,500);
+                let cnv = createCanvas(705,245);
                 angleMode(DEGREES);
-                cnv.position(390, 400);
+                let x = (windowWidth - width) / 2;
+                let y = (windowHeight - height) / 2;
+                cnv.position(x, y);
             }
             function draw(){
                 fill(0,0,0)
@@ -142,6 +144,7 @@
             timeOutid4 = setTimeout(() => delayed(4), 4000);
             timeOutid5 = setTimeout(() => delayed(5), 5000);
             timeOutid6 = setTimeout(delayed2, 5000+random*1000);
+            start.value = "Clicca qui"
         })
         start.addEventListener("click", function(event){
             if (!check) {
