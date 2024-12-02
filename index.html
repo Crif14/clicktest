@@ -86,7 +86,6 @@
             verde  = 0
             check= false
             startTime = null;
-            tempoText.textContent = "Qui apparirà il tuo tempo";
             clearTimeout(timeOutid1);
             clearTimeout(timeOutid2);
             clearTimeout(timeOutid3);
@@ -133,6 +132,7 @@
                 circle(650,170,70)
             }
         inizio.addEventListener("click", function (event) {
+            tempoText.textContent = "Qui apparirà il tuo tempo";
             reset()
             inizio.style.display = "none";
             start.style.display = "block";
@@ -148,7 +148,7 @@
         })
         start.addEventListener("click", function(event){
             if (!check) {
-                tempoText.innerHTML = "Troppo presto! Hai perso.";
+                tempoText.innerHTML = "Troppo presto! Hai perso!!";
                 reset()
             } else {
                 let reactionTime = (Date.now() - startTime) / 1000;
